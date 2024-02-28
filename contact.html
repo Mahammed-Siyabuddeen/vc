@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="Sendform(event)" method="get">
+        <label  for="namer">name</label>
+        <input id="name" type="text">
+        <label for="emial"> email</label>
+        <input id="email" type="email">
+        <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+ function Sendform(e){
+    e.preventDefault()
+    var name=document.getElementById('name').value
+    var email=document.getElementById('email').value
+    console.log('dd',name,email);
+    const data={name,email}
+    console.log(data);
+    localStorage.setItem('profile',JSON.stringify(data))
+    window.location.href='/success.html'
+ }
+</script>
+</html>

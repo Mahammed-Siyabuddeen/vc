@@ -15,7 +15,8 @@
             <p>Services</p>
             <p>Industries</p>
             <P>About</P>
-            <button>CONTACT</button>
+            <button id="loginame">CONTACT</button>
+            <p onclick="location.href='/contact.html'">contact</p>
         </div>
     </div>
 
@@ -115,4 +116,13 @@
         </div>
     </div>
 </body>
+<script>
+    window.onload=()=>{
+        console.log('loaded');
+        var data=JSON.parse(localStorage.getItem('profile'))
+        console.log(data);
+        document.getElementById('loginame').innerHTML=data?data.name:'contact'
+    }
+    
+</script>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar_left">
+            <img src="" alt="">
+        </div>
+        <div class="navbar_r">
+            <p>Services</p>
+            <p>Industries</p>
+            <P>About</P>
+            <button onclick="Handle()" id="loginame">login</button>
+            <!-- <p onclick="location.href='/contact.html'">contact</p> -->
+        </div>
+    </div>
+</body>
+<script>
+    window.onload=()=>{
+        data=JSON.parse(localStorage.getItem('profile'))
+        console.log(data.name);
+        document.getElementById('loginame').innerHTML=data?data.name:'contact'
+        
+    }
+    function Handle(){
+        localStorage.clear();
+        location.href='/contact.html'
+    }
+</script>
+</html>
